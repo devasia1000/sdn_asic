@@ -1,5 +1,4 @@
-// this module performs comparisons on two 2 bit inputs
-
+// performs comparisons on two 2 bit inputs
 module chained_comp (input wire [1:0] a, input wire [1:0] b, output wire done);
 
 wire p1, p2;
