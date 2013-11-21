@@ -1,0 +1,35 @@
+$date
+	Thu Nov 21 13:22:39 2013
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	10ps
+$end
+$scope module test_bench $end
+$var reg 2 ! test_in0 [1:0] $end
+$upscope $end
+$scope module test_bench $end
+$var reg 2 " test_in1 [1:0] $end
+$upscope $end
+$scope module test_bench $end
+$var wire 1 # test_out $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1#
+b0 "
+b0 !
+$end
+#20000
+0#
+b1 !
+#40000
+b11 "
+#60000
+1#
+b10 "
+b10 !
+#80000
