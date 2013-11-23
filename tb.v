@@ -2,36 +2,32 @@
 
 module test_bench;
 
-    reg [1:0] test_in0, test_in1;
-    wire test_out;
+    reg [4:0] packet;
+    wire [1:0]  out;
 
-    chained_comp uut(test_in0, test_in1, test_out);
+    selector #(5, 3, 4)  uut(packet, out);
 
     initial begin
         
         $dumpfile("main.vcd");
-        $dumpvars(1, test_in0, test_in1, test_out);
+        $dumpvars(1, packet, out);
 
         // test vector 1
-        test_in0 = 2'b00;
-        test_in1 = 2'b00;
+        packet = 5'b00000;
         # 200;
 
-        // test vector 2
-        test_in0 = 2'b01;
-        test_in1 = 2'b00;
+        // test vector 1
+        packet = 5'b11111;
         # 200;
 
-        // test vector 3
-        test_in0 = 2'b01;
-        test_in1 = 2'b11;
+        // test vector 1
+        packet = 5'b01010;
         # 200;
         
-        // test vector 4
-        test_in0 = 2'b10;
-        test_in1 = 2'b10;
+        // test vector 1
+        packet = 5'b01111;
         # 200;
-        
+
         $dumpflush;
         $stop;
     
